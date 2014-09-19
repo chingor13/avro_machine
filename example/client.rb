@@ -31,5 +31,4 @@ end
 require 'pp'
 client = Client.new('localhost', 9090)
 pp client.message1
-
 pp client.hello_world('Jeff')

@@ -1,5 +1,4 @@
 require 'eventmachine'
-require 'em-synchrony'
 
 module AvroMachine
   class Connection < EventMachine::Connection
@@ -15,7 +14,6 @@ module AvroMachine
 
     # buffer data - we can receive incomplete request over the tcp port
     def receive_data(data)
-      puts "receiving data"
       @input << data
 
       # an avro request is terminated by a 0 byte
@@ -29,15 +27,13 @@ module AvroMachine
       str = reader.read_framed_message
 
       # handle the request
-      EM.synchrony do
-        responder = self.class.responder.new
-        resp = responder.respond(str)
+      responder = self.class.responder.new
+      resp = responder.respond(str)
 
-        # format the response
-        writer = Avro::IPC::FramedWriter.new(StringIO.new(""))
-        writer.write_framed_message(resp)
-        send_data(writer.to_s)
-      end
+      # format the response
+      writer = Avro::IPC::FramedWriter.new(StringIO.new(""))
+      writer.write_framed_message(resp)
+      send_data(writer.to_s)
     end
   end
 end

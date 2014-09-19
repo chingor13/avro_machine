@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 Bundler.require
-require 'pp'
 
 class MyResponder < AvroMachine::Responder
   def self.protocol
@@ -8,7 +7,6 @@ class MyResponder < AvroMachine::Responder
   end
 
   def message1(params)
-    puts "in message1"
     [1, 2, 3]
   end
 
