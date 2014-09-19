@@ -50,6 +50,7 @@ class MyConnection < AvroMachine::Connection
 end
 ```
 
+See the example in the example folder.
 
 ## Contributing
 
