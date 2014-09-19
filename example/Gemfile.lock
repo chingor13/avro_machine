@@ -1,0 +1,23 @@
+PATH
+  remote: ../
+  specs:
+    avro_machine (0.0.1)
+      avro (~> 1.7.7)
+      em-synchrony (~> 1.0.0)
+      eventmachine (~> 1.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    avro (1.7.7)
+      multi_json
+    em-synchrony (1.0.3)
+      eventmachine (>= 1.0.0.beta.1)
+    eventmachine (1.0.3)
+    multi_json (1.10.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  avro_machine!

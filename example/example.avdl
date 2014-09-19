@@ -1,0 +1,8 @@
+@namespace("Example")
+
+protocol Example {
+
+  array<int> message1();
+
+  string hello_world(string name);
+}

@@ -1,0 +1,21 @@
+{
+  "protocol" : "Example",
+  "namespace" : "Example",
+  "types" : [ ],
+  "messages" : {
+    "message1" : {
+      "request" : [ ],
+      "response" : {
+        "type" : "array",
+        "items" : "int"
+      }
+    },
+    "hello_world" : {
+      "request" : [ {
+        "name" : "name",
+        "type" : "string"
+      } ],
+      "response" : "string"
+    }
+  }
+}
